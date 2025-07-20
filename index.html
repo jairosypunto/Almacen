@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModaStyleJasc - Tienda de Ropa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ModaStyleJasc</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito-icono" id="carrito-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="carrito-contador" id="carrito-contador">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h2>Las mejores tendencias de moda</h2>
+                <p>Descubre nuestra colección exclusiva</p>
+                <a href="#productos" class="btn">Ver colección</a>
+            </div>
+        </section>
+
+        <section class="productos" id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="filtros">
+                <button class="filtro-btn active" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="hombre">Hombre</button>
+                <button class="filtro-btn" data-categoria="mujer">Mujer</button>
+                <button class="filtro-btn" data-categoria="niños">Niños</button>
+            </div>
+            <div class="productos-grid" id="productos-grid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <section class="ofertas" id="ofertas">
+            <h2>Ofertas Especiales</h2>
+            <div class="ofertas-grid">
+                <!-- Las ofertas se cargarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-container">
+                <div class="info-contacto">
+                    <h3>Información de contacto</h3>
+                    <p><i class="fas fa-phone"></i> 3016173378</p>
+                    <p><i class="fas fa-envelope"></i> jairosypunto@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <Medellín, Colombia</p>
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <form class="formulario-contacto" id="formulario-contacto">
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <textarea placeholder="Mensaje" required></textarea>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito de compras -->
+    <div class="carrito-overlay" id="carrito-overlay">
+        <div class="carrito-container">
+            <div class="carrito-header">
+                <h2>Tu Carrito</h2>
+                <button class="cerrar-carrito" id="cerrar-carrito">&times;</button>
+            </div>
+            <div class="carrito-body" id="carrito-body">
+                <!-- Los productos del carrito se cargarán aquí -->
+                <p class="carrito-vacio">Tu carrito está vacío</p>
+            </div>
+            <div class="carrito-footer">
+                <div class="carrito-total">
+                    <h3>Total: <span id="carrito-total">$0</span></h3>
+                </div>
+                <div class="carrito-acciones">
+                    <button class="btn vaciar-carrito" id="vaciar-carrito">Vaciar carrito</button>
+                    <button class="btn finalizar-compra" id="finalizar-compra">Finalizar compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación de compra -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Confirmar Compra</h2>
+                <button class="cerrar-modal" id="cerrar-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formulario-compra">
+                    <input type="text" id="nombre-cliente" placeholder="Nombre completo" required>
+                    <input type="email" id="email-cliente" placeholder="Correo electrónico" required>
+                    <input type="tel" id="telefono-cliente" placeholder="Teléfono" required>
+                    <textarea id="direccion-cliente" placeholder="Dirección de envío" required></textarea>
+                    <div class="metodo-pago">
+                        <label><input type="radio" name="metodo-pago" value="transferencia" checked> Transferencia bancaria</label>
+                        <label><input type="radio" name="metodo-pago" value="contraentrega"> Pago contra entrega</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancelar-compra" id="cancelar-compra">Cancelar</button>
+                <button class="btn confirmar-compra" id="confirmar-compra">Confirmar y Pagar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ModaStyleJasc</h3>
+                <p>La mejor selección de ropa para toda la familia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> 3016173378</p>
+                <p><i class="fas fa-envelope"></i> jairosypunto@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ModaStyleJasc. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="factura.js"></script>
+</body>
+</html>
